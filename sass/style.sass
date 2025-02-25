@@ -1,0 +1,249 @@
+@import "normalizez.scss"
+@import "resets.scss"
+
+@font-face
+    font-family: "main-font"
+    src: url("../fonts/Halogen_0.ttf")
+
+@keyframes slide
+    0%
+        background-position: 0% 0%
+    50%
+        background-position: 100% 0%
+    100%
+        background-position: 0% 0%
+* 
+    box-sizing: border-box
+
+body
+    font-family: "main-font"
+    background-color: #262B24
+
+.main
+    background-image: url(../img/background__main.jpg)
+    background-size: cover
+    background-repeat: repeat-x 
+    animation: slide 60s linear infinite
+    background-color: rgba(0, 0, 0, 0.5)
+
+.fa
+    font-size: 30px
+    margin-right: 10px
+
+.app
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: 100vh //максимальная высота вне зависимости от размера экрана
+    justify-content: space-between
+    overflow: hidden
+    &__header
+        background-color: rgba(0, 0, 0, 0.5)
+        border-bottom: 3px solid #ADB11D
+        min-height: 247px
+        width: 100%
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 0 10px
+    &__logo
+        padding: 20px 0
+        display: block
+        width: 200px
+        margin: 0 auto
+    &__main-part
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-evenly
+        height: 100%
+        overflow: auto //при необходимости будет появляться скролл
+    &__btn
+        padding: 10px 20px
+        display: flex
+        align-items: center
+        justify-content: center
+        text-align: center
+        min-height: 50px
+        width: 240px
+        background-color: #ADB11D
+        border-radius: 30px
+        box-shadow: 0px 4px 0px 1px #48491D
+        margin: 0 auto
+        text-decoration: none
+        font-size: 16px
+        line-height: 20px
+        color: white
+        text-transform: uppercase
+        &:focus
+            outline: none
+
+
+.achivments, .app__body 
+    justify-content: flex-start
+
+i.fa-star
+    margin-right: 0px
+    font-size: 15px
+    margin-bottom: 3px
+.app
+    &__btn
+        cursor: pointer
+    &__body-inner
+        width: 100%
+        max-width: 375px
+        margin: 0 auto
+        color: white
+        display: flex
+        flex-direction: column
+        padding: 20px
+    &__body-title
+        text-align: center
+        text-transform: uppercase
+        font-size: 25px
+        margin-bottom: 20px
+        padding-top: 20px
+    &__body-top
+        display: grid
+        grid-template-columns: 50% 50%
+        grid-template-rows: max-content max-content
+        place-content: center center
+        margin-bottom: 20px
+    &__card
+        background-color: rgba(72,73,29,0.5)
+        padding: 20px 10px
+        border: 5px solid rgba(173, 177, 29, 0.5)
+        text-align: center
+        &:nth-child(1)
+            border-right: none
+            border-bottom: none
+        &:nth-child(2)
+            border-left: none
+            border-bottom: none
+        &:nth-child(3)
+            border-right: none
+            border-top: none
+        &:nth-child(4)
+            border-left: none
+            border-top: none
+    &__card-text
+        font-size: 22px
+        margin-bottom: 10px
+    &__card-count
+        font-size: 18px
+    &__body-middle
+        margin-bottom: 15px
+    &__result
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 5px 10px
+        border: 5px solid rgba(173, 177, 29, 0.5)
+        background-color: rgba(72,73,29,0.5)
+        margin-bottom: 7px
+        &:last-child
+            margin-bottom: 
+    &__result-score
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-evenly
+    &__result-name
+        font-size: 18px
+        margin-left: auto
+        margin-right: 20px
+    &__result-amount
+        font-size: 18px
+    &__header-inner
+        color: white
+        text-align: center
+    &__count
+        font-size: 24px
+        margin-bottom: 10px
+    &__text
+        font-size: 18px
+    &__results-inner
+        color: white
+        padding: 20px
+    &__main-part
+        justify-content: space-between
+
+.btn
+    &__back
+        width: 70px
+        height: 70px
+        box-shadow: none
+        border-radius: 50%
+    &__achivment
+        border: 5px solid rgba(173, 177, 29, 0.5)
+        background-color: rgba(72,73,29,0.5)
+
+.answer-btn
+    text-transform: none
+    width: 90%
+    font-size: 16px
+    line-height: 14px
+
+.results
+    animation: none
+    background-size: cover
+    background-position: center center 
+    justify-content: space-between
+    &__img
+        text-align: center
+        margin-bottom: 20px
+        max-height: 50%
+    &__img-img
+        width: 100%
+    &__title
+        text-align: center
+        text-transform: uppercase
+        font-size: 30px
+        margin-bottom: 20px
+    &__text-box
+        margin-bottom: 20px
+        font-size: 16px
+        line-height: 20px
+    &__text
+        margin-bottom: 20px
+
+//ФОНЫ ДЛЯ СТРАНИЦЫ РЕЗУЛЬТАТОВ
+.results[data-race="shrek"]
+    background-image: url(../img/shrek__bgc.jpg)
+
+.results[data-race="fiona"]
+    background-image: url(../img/fiona__bgc.jpg)
+
+.results[data-race="prynia"]
+    background-image: url(../img/prynia__bgc.jpg)
+
+.results[data-race="osel"]
+    background-image: url(../img/osel__bgc.jpg)
+
+.results[data-race="cat"]
+    background-image: url(../img/cat__bgc.jpg)
+
+.results[data-race="lord"]
+    background-image: url(../img/lord__bgc.jpg)
+
+.results[data-race="drakon"]
+    background-image: url(../img/drakon__bgc.jpg)
+
+//КНОПКИ ДЛЯ СТРАНИЦЫ РЕЗУЛЬТАТОВ
+.btn__fiona
+    background-color: #809FE1
+
+.btn__prynia
+    background-color: #CD882D
+
+.btn__osel
+    background-color: #685C50
+
+.btn__cat
+    background-color: #D25D08
+
+.btn__lord
+    background-color: #AE2B35
+
+.btn__drakon
+    background-color: #DC6582
