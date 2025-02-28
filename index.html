@@ -148,7 +148,7 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@vkontakte/vk-bridge@2.15.3/dist/index.umd.min.js"></script>
     <script>
-        bridge.send('VKWebAppInit')
+        vkBridge.send('VKWebAppInit')
         .then ((data) => {
             if ( data.result) {
                 console.log ('Приложение инициализировано')
