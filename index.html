@@ -149,5 +149,19 @@
     <script src="js/vue.js"></script>
     <script src="js/const.js"></script>
     <script src="js/main.js"></script> <!-- основной код -->
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+    <script>
+        bridge.send('VKWebAppInit')
+        .then ((data) => {
+            if ( data.result) {
+                console.log ('Приложение инициализировано')
+            } else {
+                console.error ('Ошибка')
+            }
+        })
+        .catch((error) => {
+            console.error ('Ошибка:', error)
+        })
+    </script>
 </body>
 </html>
