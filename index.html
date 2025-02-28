@@ -145,11 +145,6 @@
             </div>
          </div>
     </div>
-
-    <script src="js/vue.js"></script>
-    <script src="js/const.js"></script>
-    <script src="js/main.js"></script> <!-- основной код -->
-    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
     <script>
         bridge.send('VKWebAppInit')
         .then ((data) => {
@@ -163,5 +158,9 @@
             console.error ('Ошибка:', error)
         })
     </script>
+    <script src="js/vue.js"></script>
+    <script src="js/const.js"></script>
+    <script src="js/main.js"></script> <!-- основной код -->
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 </body>
 </html>
