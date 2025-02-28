@@ -10,6 +10,20 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
+    <script>
+        bridge.send('VKWebAppInit')
+        .then ((data) => {
+            if ( data.result) {
+                console.log ('Приложение инициализировано')
+            } else {
+                console.error ('Ошибка')
+            }
+        })
+        .catch((error) => {
+            console.error ('Ошибка:', error)
+        })
+    </script>
     <div class="main">
         <!-- ОСНОВНОЙ ЭКРАН -->
         <div class="app" v-show = "showMain"> <!-- директива v-show значение которой мы берем из скрипта и отвечает за то, какой экран будет показываться --> <!-- директива @click - срабатывает при нажатии кнопки -->
@@ -145,22 +159,8 @@
             </div>
          </div>
     </div>
-    <script>
-        bridge.send('VKWebAppInit')
-        .then ((data) => {
-            if ( data.result) {
-                console.log ('Приложение инициализировано')
-            } else {
-                console.error ('Ошибка')
-            }
-        })
-        .catch((error) => {
-            console.error ('Ошибка:', error)
-        })
-    </script>
     <script src="js/vue.js"></script>
     <script src="js/const.js"></script>
     <script src="js/main.js"></script> <!-- основной код -->
-    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/browser.min.js"></script>
 </body>
 </html>
